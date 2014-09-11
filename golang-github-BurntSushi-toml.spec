@@ -5,7 +5,7 @@
 
 Name:           golang-github-BurntSushi-toml
 Version:        0
-Release:        0.git%{shortcommit}%{?dist}
+Release:        0.0.git%{shortcommit}%{?dist}
 Summary:        TOML parser and encoder for Go with reflection
 License:        BSD
 URL:            https://github.com/BurntSushi/toml
@@ -43,7 +43,7 @@ install -d %{buildroot}/%{gopath}/src/%{import_path}
 cp -pav *.go %{buildroot}/%{gopath}/src/%{import_path}
 
 %check
-GOPATH=%{gopath}:%{buildroot}/%{gopath} go test %{import_path}
+GOPATH=%{buildroot}/%{gopath}:%{gopath} go test %{import_path}
 
 %files
 %defattr(-,root,root,-)
